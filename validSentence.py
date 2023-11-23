@@ -59,41 +59,65 @@ def isValid(inputString):
 
 #Tests
 #Method 1
-print("\nTesting 'isUpper' method. Checking for Capital letter at start of string.\
-      \nTest 1: String: 'The quick brown fox'. Result: " + str(isUpper('The quick brown fox')) +  # String starts with capital. Should return True
-      "\nTest 2: String: 'the quick brown fox'. Result: " + str(isUpper('the quick brown fox')) +  # String starts without capital. Should return False 
-      "\nTest 3: String: '15 quick brown foxes'. Result: " + str(isUpper('15 quick brown foxes')))  # String starts with a number. Should return False 
 
-#Method 2
-print("\nTesting 'quotationCount' method. Checking for an even amount of quotation marks.\
-      \nTest 1: String: 'The quick brown fox'. Result: " + str(quotationCount('The quick brown fox')) +  # String has no quotations, should return True 
-      "\nTest 2:String: 'The \"quick brown\" fox'. Result: " + str(quotationCount('The "quick brown" fox')) +  # String has 2 quotations, should return True
-      "\nTest 3: String: 'The \"quick\" \"brown fox'. Result: " + str(quotationCount('The "quick" "brown fox')))  # String has 3 quotations, should return False
+def customInput():
+    stringInput = str(input("Enter string\n>>>: "))
+    return isValid(stringInput)
 
-#Method 3
-print("\nTesting 'finalChar' method. Checking that the final character is '.', '!', or '?'.\
-      \nTest 1: String: 'The quick brown fox.'. Result: " + str(finalChar('The quick brown fox.')) +  # String ends with a period. Should return True
-      "\nTest 2:String: 'The quick brown fox!'. Result: " + str(finalChar('The quick brown fox!')) +  # String ends with an exclamation mark. Should return True
-      "\nTest 3: String: 'The quick brown fox?'. Result: " + str(finalChar('The quick brown fox?')) +  # String ends with a question mark. Should return True
-      "\nTest 4: String: 'The quick brown fox'. Resut: " + str(finalChar('The quick brown fox')))  # String ends with no punctuation. should return False
 
-#Method 4
-print("\nTesting 'singlePeriod' method. Checking that the string has no period characters other than the last character.\
-      \nTest 1: String: 'The quick brown fox.'. Result: " + str(finalChar('The quick brown fox.')) +  # String has a period at the end. Should return True
-      "\nTest 2: String: 'The quick brown fox'. Resut: " + str(finalChar('The quick brown fox')) +  # String has no periods. Should return True
-      "\nTest 3: String: 'The quick. brown fox.'. Result: " + str(finalChar('The quick. brown fox.')) +  # String has a period in the middle, and at the end. Should return False
-      "\nTest 2: String: 'The quick. brown fox'. Resut: " + str(finalChar('The quick. brown fox')))  # String has a period in the middle. Should return False
+def unitTests():
+    print("\nTesting 'isUpper' method. Checking for Capital letter at start of string.\
+        \nTest 1: String: 'The quick brown fox'. Result: " + str(isUpper('The quick brown fox')) +  # String starts with capital. Should return True
+        "\nTest 2: String: 'the quick brown fox'. Result: " + str(isUpper('the quick brown fox')) +  # String starts without capital. Should return False 
+        "\nTest 3: String: '15 quick brown foxes'. Result: " + str(isUpper('15 quick brown foxes')))  # String starts with a number. Should return False 
 
-#Method 5
-print("\nTesting 'below13' method. Checking that the string has all numbers below 13 written out (one, two, three...).\
-      \nTest 1: String: 'There are no quick brown foxes.'. Result: " + str(below13('There are no quick brown foxes.')) +  # String does not contain any numbers. Should return True
-      "\nTest 2: String: 'There are 10 or 13 quick brown foxes.'. Result: " + str(below13('There are 10 or 13 quick brown foxes.')) +  # String contains a number below 13 in digits, and a number not below 13. Should return False
-      "\nTest 3: String: 'There are 10 quick brown foxes.'. Result: " + str(below13('There are 10 quick brown foxes.')) +  # String contains a number below 13 in digits. Should return False
-      "\nTest 2: String: 'There are 13 quick brown foxes.'. Result: " + str(below13('There are 13 quick brown foxes.')))  # String contains a number not below 13. Should return True
+    #Method 2
+    print("\nTesting 'quotationCount' method. Checking for an even amount of quotation marks.\
+        \nTest 1: String: 'The quick brown fox'. Result: " + str(quotationCount('The quick brown fox')) +  # String has no quotations, should return True 
+        "\nTest 2:String: 'The \"quick brown\" fox'. Result: " + str(quotationCount('The "quick brown" fox')) +  # String has 2 quotations, should return True
+        "\nTest 3: String: 'The \"quick\" \"brown fox'. Result: " + str(quotationCount('The "quick" "brown fox')))  # String has 3 quotations, should return False
 
-#Method 6
-print("\nTesting 'isValid' method. Checking a string meets all given requirements.\
-      \nTest 1: String: 'The quick brown fox said \"hello Mr lazy dog\".'. Result: " + str(isValid('The quick brown fox said "hello Mr lazy dog".')) +  # String has a capital start, even quotes, ends in a period, has only one period, and no numbers. Should return True
-      "\nTest 2: String: 'One lazy dog is too few, thirteen is too many.'. Result: " + str(isValid('One lazy dog is too few, thirteen is too many.')) +  # String has a capital start, no quotes, ends in a period, has only one period, and all numbers below 13 are spelled out. Should return True
-      "\nTest 3: String: '\"The quick brown fox said \"hello Mr lazy dog.\"'. Result: " + str(isValid('"The quick brown fox said "hello Mr lazy dog."')) +  # String has a capital, odd quotes, one period, ends with a period, and no numbers. Should return False
-      "\nTest 4: String: 'Are there 11, 12, or 13 lazy dogs?'. Result: " + str(isValid('Are there 11, 12, or 13 lazy dogs?'))) # String has a capital, no quotes, no periods, ends with a question mark, and has numbers below 13 as digits. Should return False
+    #Method 3
+    print("\nTesting 'finalChar' method. Checking that the final character is '.', '!', or '?'.\
+        \nTest 1: String: 'The quick brown fox.'. Result: " + str(finalChar('The quick brown fox.')) +  # String ends with a period. Should return True
+        "\nTest 2:String: 'The quick brown fox!'. Result: " + str(finalChar('The quick brown fox!')) +  # String ends with an exclamation mark. Should return True
+        "\nTest 3: String: 'The quick brown fox?'. Result: " + str(finalChar('The quick brown fox?')) +  # String ends with a question mark. Should return True
+        "\nTest 4: String: 'The quick brown fox'. Resut: " + str(finalChar('The quick brown fox')))  # String ends with no punctuation. should return False
+
+    #Method 4
+    print("\nTesting 'singlePeriod' method. Checking that the string has no period characters other than the last character.\
+        \nTest 1: String: 'The quick brown fox.'. Result: " + str(finalChar('The quick brown fox.')) +  # String has a period at the end. Should return True
+        "\nTest 2: String: 'The quick brown fox'. Resut: " + str(finalChar('The quick brown fox')) +  # String has no periods. Should return True
+        "\nTest 3: String: 'The quick. brown fox.'. Result: " + str(finalChar('The quick. brown fox.')) +  # String has a period in the middle, and at the end. Should return False
+        "\nTest 2: String: 'The quick. brown fox'. Resut: " + str(finalChar('The quick. brown fox')))  # String has a period in the middle. Should return False
+
+    #Method 5
+    print("\nTesting 'below13' method. Checking that the string has all numbers below 13 written out (one, two, three...).\
+        \nTest 1: String: 'There are no quick brown foxes.'. Result: " + str(below13('There are no quick brown foxes.')) +  # String does not contain any numbers. Should return True
+        "\nTest 2: String: 'There are 10 or 13 quick brown foxes.'. Result: " + str(below13('There are 10 or 13 quick brown foxes.')) +  # String contains a number below 13 in digits, and a number not below 13. Should return False
+        "\nTest 3: String: 'There are 10 quick brown foxes.'. Result: " + str(below13('There are 10 quick brown foxes.')) +  # String contains a number below 13 in digits. Should return False
+        "\nTest 2: String: 'There are 13 quick brown foxes.'. Result: " + str(below13('There are 13 quick brown foxes.')))  # String contains a number not below 13. Should return True
+
+    #Method 6
+    print("\nTesting 'isValid' method. Checking a string meets all given requirements.\
+        \nTest 1: String: 'The quick brown fox said \"hello Mr lazy dog\".'. Result: " + str(isValid('The quick brown fox said "hello Mr lazy dog".')) +  # String has a capital start, even quotes, ends in a period, has only one period, and no numbers. Should return True
+        "\nTest 2: String: 'One lazy dog is too few, thirteen is too many.'. Result: " + str(isValid('One lazy dog is too few, thirteen is too many.')) +  # String has a capital start, no quotes, ends in a period, has only one period, and all numbers below 13 are spelled out. Should return True
+        "\nTest 3: String: '\"The quick brown fox said \"hello Mr lazy dog.\"'. Result: " + str(isValid('"The quick brown fox said "hello Mr lazy dog."')) +  # String has a capital, odd quotes, one period, ends with a period, and no numbers. Should return False
+        "\nTest 4: String: 'Are there 11, 12, or 13 lazy dogs?'. Result: " + str(isValid('Are there 11, 12, or 13 lazy dogs?'))) # String has a capital, no quotes, no periods, ends with a question mark, and has numbers below 13 as digits. Should return False
+    
+def main():
+    while True:
+        print("1) Check custom input\n2) Run unit tests\n3) Quit")
+        userInput = int(input(">>>: "))
+        if (userInput == 1):
+            if (customInput()):
+                print("Valid entry")
+            else:
+                print("Invalid entry")
+        if (userInput == 2):
+            unitTests()
+        if (userInput == 3):
+            break
+
+main()
+
