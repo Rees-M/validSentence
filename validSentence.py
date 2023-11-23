@@ -1,6 +1,14 @@
 #imports
 import re
 
+'''This program takes in a string and checks if it meets certain criteria.
+The criteria for this program are:
+-Starts with a capital letter
+-Has an even number of quotation marks
+-Ends with a ".", "?", or "!"
+-Has no period characters other than the last character
+-Has all numbers below 13 spelled out'''
+
 # This method takes in a string and checks if it starts with a captial letter.
 def isUpper(inputString):
     if (not inputString[0].isalpha()):  # if the string doesn't start with a letter
@@ -34,18 +42,10 @@ def below13(inputString):
         return False
     return True
 
-'''This method takes in a string and checks if it meets certain criteria.
-The criteria for this program are:
--Starts with a capital letter
--Has an even number of quotation marks
--Ends with a ".", "?", or "!"
--Has no period characters other than the last character
--Has all numbers below 13 spelled out
 
-If the string meets all of these criteria, it is valid, and the method returns true
-If it fails any of the criteria, it is invalid, and the method returns false
-'''
-
+# This method takes in a string and runs it through all the above methods
+# If the string meets all of the criteria, it is valid, and the method returns true
+# If it fails any of the criteria, it is invalid, and the method returns false
 def isValid(inputString):
     #inputString = str(inputString)  # convert inputString to a string to avoid errors with improper types
     if (isUpper(inputString)):
