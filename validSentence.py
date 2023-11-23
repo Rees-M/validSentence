@@ -57,15 +57,14 @@ def isValid(inputString):
     
     return False
 
-#Tests
-#Method 1
-
+# This method accepts a custom input
 def customInput():
     stringInput = str(input("Enter string\n>>>: "))
     return isValid(stringInput)
 
-
+# This method runs the unit tests
 def unitTests():
+    #Method 1
     print("\nTesting 'isUpper' method. Checking for Capital letter at start of string.\
         \nTest 1: String: 'The quick brown fox'. Result: " + str(isUpper('The quick brown fox')) +  # String starts with capital. Should return True
         "\nTest 2: String: 'the quick brown fox'. Result: " + str(isUpper('the quick brown fox')) +  # String starts without capital. Should return False 
@@ -104,7 +103,8 @@ def unitTests():
         "\nTest 2: String: 'One lazy dog is too few, thirteen is too many.'. Result: " + str(isValid('One lazy dog is too few, thirteen is too many.')) +  # String has a capital start, no quotes, ends in a period, has only one period, and all numbers below 13 are spelled out. Should return True
         "\nTest 3: String: '\"The quick brown fox said \"hello Mr lazy dog.\"'. Result: " + str(isValid('"The quick brown fox said "hello Mr lazy dog."')) +  # String has a capital, odd quotes, one period, ends with a period, and no numbers. Should return False
         "\nTest 4: String: 'Are there 11, 12, or 13 lazy dogs?'. Result: " + str(isValid('Are there 11, 12, or 13 lazy dogs?'))) # String has a capital, no quotes, no periods, ends with a question mark, and has numbers below 13 as digits. Should return False
-    
+
+# Main method. Runs a small menu to allow user to choose methods to run    
 def main():
     while True:
         print("1) Check custom input\n2) Run unit tests\n3) Quit")
@@ -120,4 +120,3 @@ def main():
             break
 
 main()
-
